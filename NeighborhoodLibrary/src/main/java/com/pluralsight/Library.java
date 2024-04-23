@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Library {
     static Scanner scanner = new Scanner(System.in);
     static Book[] bookLibrary = new Book[20];
-    static int option = new option();
+
 
     public static void main(String[] args) {
 
@@ -40,19 +40,21 @@ public class Library {
                 showCheckedOutBooks();
                 break;
             case 3:
-                System.exit();
+                System.exit(0);
                 return;
         }
         System.out.println("Enter your option: ");
         option = scanner.nextInt();
-
+    }
         private static void showAvailableBooks() {
             for (Book book : bookLibrary) {
-                if (!book.isCheckedOut() {
+                if (!book.getisCheckedOut()) {
                     System.out.println(book);
             }
+            }
+        }
         private static void showCheckedOutBooks() {
-                    System.out.println("Enter the id of book that you want to check out: ")
+                    System.out.println("Enter the id of book that you want to check out: ");
                     int id = scanner.nextInt();
                     scanner.nextLine();
                     System.out.print("Enter your name: ");
@@ -61,20 +63,25 @@ public class Library {
                         book.checkOut(name);
                         System.out.println(book.gettitle()+"Was checked out by"+ name);
                     }
-            }
-
-
-
             System.out.println("what would you like to do:\n\t Check out a book (C)\n\t Exit to main menu (X)");
             String command = scanner.nextLine();
 
             if (command.equalsIgnoreCase("c")) {
-                checkOutBook();
+                for (Book book : bookLibrary) {
+                    if (book.getid()==id);
+                    book.checkIn();
+                    System.out.println(book.gettitle());
+                }
+            }
+
+
+
+
             }
         }
-    }
 
 
-    }
-}
+
+
+
 
